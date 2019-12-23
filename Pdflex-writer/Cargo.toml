@@ -1,5 +1,5 @@
 [package]
-name = "Pdflex-writer"
+name = "pdf-writer"
 version = "0.1.0"
 authors = ["Ian van de Poll <ian.vd.poll@gmail.com>"]
 edition = "2018"
