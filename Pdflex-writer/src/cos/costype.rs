@@ -1,4 +1,4 @@
-enum COStype {
+pub enum COSType {
     Object,
     Array,
     Dictionary,
@@ -6,6 +6,6 @@ enum COStype {
     Boolean,
     Integer,
     Float,
-    String,
+    Text,
     Null,
 }

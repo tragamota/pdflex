@@ -1,5 +1,6 @@
+use crate::cos::costype::COSType;
 
-trait CosBase {
-    fn cos_type(&self) -> COStype;
+pub trait COSBase {
+    fn cos_type(&self) -> &COSType;
     fn write(&self) -> Vec<u8>;
 }
