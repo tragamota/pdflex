@@ -1,4 +1,4 @@
-use crate::pageDimension::PageDimension;
+use crate::page_dimension::PageDimension;
 
 pub struct Page {
     pub dimension: PageDimension,

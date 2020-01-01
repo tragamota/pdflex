@@ -3,9 +3,10 @@ use std::path::Path;
 use std::fs::File;
 use std::io::prelude::Write;
 
-use crate::documentInfo::DocumentInfo;
 use crate::page::Page;
-use crate::pageDimension::PageDimension;
+use crate::page_dimension::PageDimension;
+use crate::document_info::DocumentInfo;
+
 
 pub struct Document {
     pub info: DocumentInfo,
@@ -15,7 +16,11 @@ pub struct Document {
 
 impl Document {
     pub fn new() -> Document {
-        Document { info: DocumentInfo::new(), pages: Vec::new(), _secret: ()}
+        Document { 
+            info: DocumentInfo::new(), 
+            pages: Vec::new(), 
+            _secret: ()
+        }
     }
 
     pub fn add_page(&mut self, dimension: PageDimension) -> &mut Page {
@@ -41,12 +46,12 @@ impl Document {
         Vec::new()
     }
 
-    pub fn save(&mut self, filePath: &Path) -> std::io::Result<()> {
-        let mut documentFile = File::create(filePath)?;
-        let documentData : Vec<u8> = Document::binary_data(self);
+    pub fn save(&mut self, file_path: &Path) -> std::io::Result<()> {
+        let mut document_file = File::create(file_path)?;
+        let document_data : Vec<u8> = Document::binary_data(self);
 
-        documentFile.write_all(documentData.as_slice());
-        documentFile.flush()
+        document_file.write_all(document_data.as_slice())?;
+        document_file.flush()
     }
 
     fn binary_data(&mut self) -> Vec<u8> {

@@ -1,7 +1,10 @@
 pub mod document;
-mod page;
-mod pageDimension;
-mod documentInfo;
+pub mod page;
+pub mod page_dimension;
+pub mod document_info;
+
+mod cos;
+mod writer;
 
 #[cfg(test)]
 mod tests {
